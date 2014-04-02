@@ -1,0 +1,28 @@
+#include <iostream>
+#include <set>
+using namespace std;
+int main()
+{
+    multiset<int> m;
+    int a,b,c,t;
+    while(cin>>a&&a!=0)
+    {
+        while(a--)
+        {
+            cin>>t;
+            m.insert(t);
+        }
+        cin>>b;
+        cout<<m.count(b)<<endl;
+        m.clear();
+    }
+}
+ 
+/**************************************************************
+    Problem: 1018
+    User: 史蒂夫
+    Language: C++
+    Result: Accepted
+    Time:10 ms
+    Memory:1516 kb
+****************************************************************/
