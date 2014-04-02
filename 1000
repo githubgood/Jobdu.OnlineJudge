@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b;
+    while(cin>>a>>b)
+    {
+        cout<<a+b<<endl;
+    }
+}
+ 
+/**************************************************************
+    Problem: 1000
+    User: 史蒂夫
+    Language: C++
+    Result: Accepted
+    Time:10 ms
+    Memory:1512 kb
+****************************************************************/
