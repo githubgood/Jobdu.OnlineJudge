@@ -1,0 +1,23 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+   string a,b;
+   while(cin>>a)
+   {
+        cin>>b;
+        for(int i=0;i<b.size();i++)
+        {
+            for(int j=0;j<a.size();j++)
+            {
+                if(a[j]==b[i])
+                a.replace(j,1,"#");
+            }
+        }
+        while(a.find("#")<1000000)
+        a.erase(a.find("#"),1);
+        cout<<a;
+        cout<<endl;
+   }
+}
