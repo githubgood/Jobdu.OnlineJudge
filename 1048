@@ -1,0 +1,15 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,b,c;
+    while(cin>>a>>b>>c)
+    {
+        if((a*a+b*b==c*c)||(c*c+b*b==a*a)||(a*a+c*c==b*b))
+        cout<<"直角三角形"<<endl;
+        else if((a*a+b*b<c*c)||(c*c+b*b<a*a)||(a*a+c*c<b*b))
+        cout<<"钝角三角形"<<endl;
+        else
+        cout<<"锐角三角形"<<endl; 
+    }
+}
