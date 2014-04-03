@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdio>
+#include <vector>
+#include <cstring>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    char a[10],b[90];
+    vector<char>v;
+    while(gets(a)!='\0')
+    {
+        if(a[0]=='#'&&a[1]=='\0')
+        break;
+        gets(b);
+        for(int i=0;i<strlen(b);i++)
+        {
+            v.push_back(b[i]);
+        }
+        for(int i=0;i<strlen(a);i++)
+        {
+            cout<<a[i]<<" "<<count(v.begin(),v.end(),a[i])<<endl;
+        }
+        v.clear();
+    }
+}
+ 
+/**************************************************************
+    Problem: 1021
+    User: 史蒂夫
+    Language: C++
+    Result: Accepted
+    Time:10 ms
+    Memory:1512 kb
+****************************************************************/
