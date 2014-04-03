@@ -1,0 +1,26 @@
+#include <iostream>
+#include <cstdio>
+#include <string.h>
+using namespace std;
+int main()
+{
+    unsigned a,b,s1,s2;
+    char f[100],c[100];
+    while(cin>>a&&a!=0)
+    {
+        s1=0;
+        s2=0;
+        sprintf(c,"%d",a);
+        b=a*a;
+        for(int i=0;i<strlen(c);i++)
+        {
+            s1+=(c[i]-'0');
+        }
+        sprintf(f,"%d",b);
+        for(int i=0;i<strlen(f);i++)
+        {
+            s2+=(f[i]-'0');
+        }
+        cout<<s1<<" "<<s2<<endl;
+    }
+}
