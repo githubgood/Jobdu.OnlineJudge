@@ -1,0 +1,30 @@
+#include <iostream>
+#include <map>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+	map<char,int> m;
+	char a[1024];
+	string s;
+	while(gets(a)!='\0')
+	{
+		for(int i=0;i<26;i++)
+		{
+			m['A'+i]=0;
+		}
+		s=a;
+		for(int i=0;i<s.length();i++)
+		{
+			if(s[i]>='A'&&s[i]<='Z')m[s[i]]++;
+		}
+		map<char,int>::iterator it;
+		for(it=m.begin();it!=m.end();it++)
+		{
+			cout<<(*it).first<<":"<<(*it).second<<endl;
+		}
+		m.clear();
+	}
+	//system("pause");
+} 
