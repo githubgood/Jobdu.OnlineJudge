@@ -1,0 +1,17 @@
+#include <string>
+#include <cstring>
+#include <cstdio>
+#include <iostream>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    char a[2000];
+    string s;
+    while(gets(a)!='\0')
+    {
+        sort(a,a+strlen(a));
+        s=a;
+        cout<<s<<endl;
+    }
+}
