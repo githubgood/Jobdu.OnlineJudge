@@ -1,0 +1,45 @@
+#include <vector>
+#include <iostream>
+using namespace std;
+struct info
+{
+    int x;
+    int y;
+    int z;
+};
+int main()
+{
+    vector<info> v;
+    info in;
+    int n,i,j,k;
+    while(cin>>n)
+    {
+        for(i=0;i<101;i++)
+        {
+            for(j=0;j<102;j++)
+            {
+                if((i*5+j*3+(100-i-j)*((float)1/3))<=n)
+                {
+                    in.x=i;
+                    in.y=j;
+                    in.z=100-i-j;
+                    v.push_back(in);
+                }
+            }
+        }
+        for(int i=0;i<v.size();i++)
+        {
+            cout<<"x="<<v[i].x<<","<<"y="<<v[i].y<<","<<"z="<<v[i].z<<endl;
+        }
+        v.clear();
+    }
+}
+ 
+/**************************************************************
+    Problem: 1045
+    User: 史蒂夫
+    Language: C++
+    Result: Accepted
+    Time:50 ms
+    Memory:1512 kb
+****************************************************************/
