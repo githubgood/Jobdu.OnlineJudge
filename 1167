@@ -1,0 +1,39 @@
+#include <vector>
+#include <iostream>
+#include <string>
+#include <cstdio>
+#include <map>
+#include <vector>
+using namespace std;
+int main()
+{
+   map<int,int> m;
+   vector<int> v;
+   int i,n,a[10003],k;
+   while(cin>>n)
+   {
+        while(n--)
+        {
+        cin>>k;
+        v.push_back(k);
+        m[k]=0;
+        }
+   map<int,int>::iterator it;
+   i=1;
+   for(it=m.begin();it!=m.end();it++)
+   {
+        (*it).second=i;
+        i++;
+   }
+   for(int j=0;j<v.size();j++)
+   {
+        if(j==0)
+        cout<<m[v[j]];
+        else
+        cout<<" "<<m[v[j]];
+   }
+   cout<<endl;
+   m.clear();
+   v.clear();
+}
+}
