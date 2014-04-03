@@ -1,0 +1,27 @@
+#include <iostream>
+#include <map>
+#include <string>
+using namespace std;
+int main()
+{
+    int n,t;
+    string s;
+    map<int,string>m;
+    while(cin>>n)
+    {
+        while(n--)
+        {
+            cin>>t>>s;
+            m[t]=s;
+        }
+    map<int,string>::iterator it=m.end();
+    it--;
+    while(it!=m.begin())
+    {
+        cout<<(*it).second<<endl;
+        it--;
+    }
+    cout<<(*it).second<<endl;
+    m.clear();
+}
+}
