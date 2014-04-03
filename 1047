@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int a,f;
+    while(cin>>a)
+    {
+        f=0;
+        if(a<2)
+        {
+            cout<<"no"<<endl;
+        }
+        else
+        {
+            for(int i=2;i<a;i++)
+            {
+                if(a%i==0)
+                {
+                    f=1;
+                    cout<<"no"<<endl;
+                    break;
+                }
+            }
+            if(f==0)
+            cout<<"yes"<<endl;
+        }
+    }
+}
