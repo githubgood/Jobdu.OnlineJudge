@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+	int i,j,m;
+	long long a[45];
+	a[0]=0;
+	a[1]=1;
+	for(i=2;i<45;i++)
+	{
+		a[i]=a[i-1]+a[i-2];
+	}
+	while(cin>>m)
+	{
+		for(i=1;i<=m;i++)
+		{
+			for(j=0;j<2*i-1;j++)
+			{
+				if(j==0)
+				cout<<a[j];
+				else
+				cout<<" "<<a[j];
+			}
+			cout<<endl;
+		}
+	}
+}
