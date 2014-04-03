@@ -1,0 +1,40 @@
+#include <iostream>
+#include <cstdio>
+#include <set>
+using namespace std;
+int main()
+{
+    set<int>s,t;
+    int a,b,f;
+    while(cin>>a>>b)
+    {
+        if(a==0&&b==0)
+        {
+            if(f==1)
+            break;
+            set<int>::iterator its,itt;
+            its=s.end();
+            itt=t.end();
+            its--;
+            itt--;
+            cout<<(*(s.begin()))<<" "<<(*(t.begin()))<<" "<<(*its)<<" "<<(*itt)<<endl;
+            s.clear();
+            t.clear();
+            f=1;
+            goto p;
+        }
+        s.insert(a);
+        t.insert(b);
+        f=0;
+        p:;
+    }
+}
+ 
+/**************************************************************
+    Problem: 1020
+    User: 史蒂夫
+    Language: C++
+    Result: Accepted
+    Time:10 ms
+    Memory:1516 kb
+****************************************************************/
