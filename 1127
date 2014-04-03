@@ -1,0 +1,54 @@
+#include <map>
+#include <iostream>
+#include <string.h>
+#include <cstdio>
+using namespace std;
+int main()
+{
+    string a,b;
+    char c[210];
+    map<char,char> m;
+    m['V']='Q';
+    m['W']='R';
+    m['X']='S';
+    m['Y']='T';
+    m['Z']='U';
+    m['A']='V';
+    m['B']='W';
+    m['C']='X';
+    m['D']='Y';
+    m['E']='Z';
+    m['F']='A';
+    m['G']='B';
+    m['H']='C';
+    m['I']='D';
+    m['J']='E';
+    m['K']='F';
+    m['L']='G';
+    m['M']='H';
+    m['N']='I';
+    m['O']='J';
+    m['P']='K';
+    m['Q']='L';
+    m['R']='M';
+    m['S']='N';
+    m['T']='O';
+    m['U']='P'; 
+    while(cin>>a&&a!="ENDOFINPUT")
+    {
+        getchar();
+        cin.getline(c,210);
+                cin>>a;
+        for(int i=0;i<strlen(c);i++)
+        {
+            if(c[i]>='A'&&c[i]<='Z')
+            {
+                cout<<m[c[i]];
+            }
+            else
+            cout<<c[i];
+        }
+        cout<<endl;
+    }
+    //system("pause");
+}
