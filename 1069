@@ -1,0 +1,42 @@
+#include <string>
+#include <iostream>
+#include <map>
+#include <cstdio>
+using namespace std;
+struct info
+{
+    string o;
+    string p;
+    string q;
+};
+int main()
+{
+    int n;
+    string a,b,c,d;
+    info in;
+    map<string,info> m;
+    while(cin>>n)
+    {
+    while(n--)
+    {
+        cin>>a>>b>>c>>d;
+        in.o=b;
+        in.p=c;
+        in.q=d;
+        m[a]=in;
+    }
+    cin>>n;
+    while(n--)
+    {
+        cin>>a;
+        if(m.find(a)==m.end())
+        {
+            cout<<"No Answer!"<<endl;
+        }
+        else
+        cout<<(*(m.find(a))).first<<" "<<((*(m.find(a))).second).o<<" "<<((*(m.find(a))).second).p<<" "<<((*(m.find(a))).second).q<<endl;
+    }
+    m.clear();
+    }
+//  system("pause");
+}
