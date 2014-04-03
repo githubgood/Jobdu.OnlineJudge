@@ -1,0 +1,46 @@
+#include <iostream>
+#include <set>
+#include <string>
+using namespace std;
+int main()
+{
+    string str;
+    int a,b,min,te,re;
+    multiset<string> s,t;
+    while(cin>>a)
+    {
+        te=10000000;
+        while(a--)
+        {
+            cin>>str;
+            s.insert(str);
+        }
+        cin>>b;
+        while(b--)
+        {
+            cin>>str;
+            t.insert(str);
+        }
+        multiset<string>::iterator it;
+        if(s.size()==1)
+        {
+            if(t.count(*(s.begin()))>0)
+            re=-1;
+            else
+            re=0;
+        }
+        else
+        {
+            for(it=s.begin();it!=s.end();it++)
+            {
+//              if()
+                if(t.count((*it))<te)
+                {te=t.count((*it));}   
+            }
+            re=te;
+        }
+        cout<<re<<endl;
+        s.clear();
+        t.clear();
+    }
+}
