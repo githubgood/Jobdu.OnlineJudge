@@ -1,0 +1,20 @@
+#include <algorithm>
+#include <iostream>
+#include <cstdio>
+#include <string>
+using namespace std;
+int main()
+{
+    string s;
+    char a[10];
+    while(scanf("%s",a)!=EOF)
+    {
+        s=a;
+        do
+        {
+            printf("%s\n",a);
+        }while(next_permutation(a,a+s.size()));
+        printf("\n");
+    }
+ 
+} 
