@@ -1,0 +1,40 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector<long long>v(1000005),t(1000005);
+    int i,m;
+    long long max,q;
+    while(cin>>i)
+    {
+        for(int h=0;h<i;h++)
+        {
+            cin>>q;
+            v[h]=q;
+        }
+        t[0]=v[0];
+        for(int k=1;k<i;k++)
+        {
+            if(t[k-1]>=0)
+            {
+                t[k]=t[k-1]+v[k];
+            }
+            else
+            {
+                t[k]=v[k];
+            }
+        }
+        max=t[0];
+        for(m=0;m<i;m++)
+        {
+            if(max<t[m])
+            {
+                max=t[m];
+            }
+        }
+        cout<<max<<endl;
+        v.clear();
+        t.clear();
+    }
+}
