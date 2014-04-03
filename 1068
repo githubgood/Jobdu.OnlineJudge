@@ -1,0 +1,16 @@
+#include <iostream>
+#include <cmath>
+#include <cstdio>
+#define PI 3.141592
+using namespace std;
+int main()
+{
+    double a,b,c,d,e,f,r,v;
+    while(cin>>a>>b>>c>>d>>e>>f)
+    {
+        r=sqrt((d-a)*(d-a)+(e-b)*(e-b)+(f-c)*(f-c));
+        v=(((double)4)/3)*acos(-1)*pow(r,3);
+        printf("%.3f %.3f\n",r,v);
+    }   
+} 
+ 
