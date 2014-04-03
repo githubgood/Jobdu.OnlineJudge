@@ -1,0 +1,17 @@
+#include <iostream>
+#include <string.h>
+#include <cstdio>
+using namespace std;
+int main()
+{
+    string s;
+    char a[5];
+    while(scanf("%s",a)!=EOF)
+    {
+        for(int j=strlen(a)-1;j>=0;j--)
+        {
+            printf("%c",a[j]);
+        }
+        printf("\n");
+    }
+}
