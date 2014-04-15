@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+struct mon
+{
+    string na;
+    int qz;
+    int num;
+};
+bool cmp(const mon &a,const mon &b)
+{
+    if(a.qz==b.qz)return a.na<b.na;
+    else
+    return a.qz>b.qz;
+};
+int main()
+{
+  vector<mon> v;
+  mon m;
+  string str;
+   int q,p,x,y,z;
+  while(cin>>p>>q)
+  {
+        while(p--)
+        {
+            cin>>str>>x>>y;
+            m.na=str;
+            m.qz=x;
+            m.num=y;
+            v.push_back(m);
+        }
+        sort(v.begin(),v.end(),cmp);
+        while(q--)
+        {
+            z=0;
+            cin>>str;
+            for(int i=0;i<v.size();i++)
+            {
+                if(v[i].na!=str)z+=v[i].num;
+                else break;
+            }
+            cout<<z+1<<endl;
+        }
+        v.clear();
+  }
+  //system("pause");        
+}
