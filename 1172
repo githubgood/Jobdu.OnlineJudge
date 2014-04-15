@@ -1,0 +1,27 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    vector<int>v;
+    int g;
+    int t,sum;
+    while(cin>>g)
+    {
+        sum=0;
+        while(g--)
+        {
+            cin>>t;
+            v.push_back(t);
+        }
+        for(int i=1;i<v.size();i++)
+        {
+            sort(v.begin()+i-1,v.end());
+            sum+=v[i]+v[i-1];
+            v[i]+=v[i-1];
+        }
+        v.clear();
+        cout<<sum<<endl;
+    }
+}
