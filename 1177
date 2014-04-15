@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cstdio>
+#include <string>
+#include <algorithm>
+using namespace std;
+int main()
+{
+    string s,c,b;
+    int t;
+    int k,kk;
+    char a[105];
+    while(gets(a)!='\0')
+    {
+        s=a;
+        cin>>t;
+        getchar();
+        while(t--)
+        {
+            cin>>b;
+            if(b[0]=='0')
+            {
+                k=b[1]-'0';
+                kk=b[2]-'0';
+                reverse(s.begin()+k,s.begin()+k+kk);
+                cout<<s<<endl;  
+            }
+            else
+            {
+                k=b[1]-'0';
+                kk=b[2]-'0';
+                c=b.substr(3);
+                s.replace(k,kk,c);
+                cout<<s<<endl;
+            }
+        }
+        getchar();
+    }
+}
