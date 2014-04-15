@@ -1,0 +1,57 @@
+#include <algorithm>
+#include <vector>
+#include <iostream>
+#include <cstdio>
+using namespace std;
+struct info
+{
+    int a;
+    int b;
+};
+bool cmp(const info &x,const info &y)
+{
+    if(x.a*x.a+x.b*x.b==y.a*y.a+y.b*y.b)
+    return x.b>y.b;
+    else
+    return x.a*x.a+x.b*x.b<y.a*y.a+y.b*y.b;
+};
+int main()
+{
+    string s;
+    char a[50];
+    vector<info>v;
+    info in;
+    int m,p,q;
+    while(cin>>m)
+    {
+        getchar();
+        while(m--)
+        {
+            gets(a);
+            s=a;
+            if(s=="Pop")
+            {
+                if(v.size()==0)
+                {
+                    cout<<"empty"<<endl;
+                }
+                else
+                {
+                    cout<<v[v.size()-1].a<<"+i"<<v[v.size()-1].b<<endl;
+                    v.pop_back();
+                    cout<<"SIZE = "<<v.size()<<endl;
+                }
+            }
+            else
+            {
+                sscanf(a,"Insert %d+i%d",&p,&q);
+                in.a=p;
+                in.b=q;
+                v.push_back(in);
+                sort(v.begin(),v.end(),cmp);
+                cout<<"SIZE = "<<v.size()<<endl;
+            }
+        }
+        v.clear();
+    }
+}
