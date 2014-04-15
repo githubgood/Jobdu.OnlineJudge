@@ -1,0 +1,40 @@
+#include <set>
+#include <iostream>
+#include <cstdio>
+using namespace std;
+struct info
+{
+    int sc;
+    int xh;
+    bool operator < (const info &a)const
+    {
+        if(a.sc==sc)
+        {
+            return a.xh>xh;
+        }
+        else
+        return a.sc>sc;
+    }
+};
+int main()
+{
+    set<info> s;
+    int n,p,q;
+    info in;
+    while(scanf("%d",&n)!=EOF)
+    {
+    while(n--)
+    {
+        scanf("%d %d",&p,&q);
+        in.xh=p;
+        in.sc=q;
+        s.insert(in);
+    }
+    set<info>::iterator it;
+    for(it=s.begin();it!=s.end();it++)
+    {
+        printf("%d %d\n",(*it).xh,(*it).sc);
+    }
+    s.clear();
+}
+}
