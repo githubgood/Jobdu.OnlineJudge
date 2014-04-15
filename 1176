@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cmath>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector<int> a;
+    int n,d,t,temp;
+    while(cin>>n)
+    {
+        temp=n;
+         while(n--)
+         {
+                cin>>t;
+                a.push_back(t);
+         }  
+         cin>>d;
+         if(temp<=pow(double(2),double(d-1))-1) cout<<"EMPTY";
+         else
+         {
+                for(int i=(int(pow(double(2),double(d-1)))-1);i<=int(pow(double(2),double(d))-2)&&i<a.size();i++)
+                {
+                    if(i==(int(pow(double(2),double(d-1)))-1))cout<<a[i];
+                    else
+                    cout<<" "<<a[i];
+                }
+         }
+         cout<<endl;
+         a.clear();
+    }
+    //system("pause");
+}
