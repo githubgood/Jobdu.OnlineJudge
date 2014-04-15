@@ -1,0 +1,13 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int main()
+{
+    char a[1000111];
+    int i;
+    while(cin>>i)
+    {
+        sprintf(a,"%o",i);
+        cout<<a<<endl;
+    }
+}
