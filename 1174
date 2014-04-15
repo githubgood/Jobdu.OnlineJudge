@@ -1,0 +1,22 @@
+#include <set>
+#include <iostream>
+using namespace std;
+int main()
+{
+    set<int> s;
+    int a,b;
+    while(cin>>a)
+    {
+        while(a--)
+        {
+            cin>>b;
+            s.insert(b);
+        }
+        cin>>b;
+        set<int>::iterator it=s.begin();
+        while(--b) it++;
+        cout<<(*it)<<endl;
+        s.clear();
+    }
+}
+ 
