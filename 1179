@@ -1,0 +1,32 @@
+#include <iostream>
+#include <algorithm>
+#include <vector>
+using namespace std;
+int main()
+{
+    long long n;
+    long sum1,sum2,t,tt;
+    while(cin>>n)
+    {
+        sum1=0;sum2=0;
+        for(long i=1;i<=n;i+=2)
+        {
+            tt=i;
+            t=1;
+            do{
+                t*=tt;
+            }while(--tt);
+            sum1+=t;
+        }
+        for(long i=2;i<=n;i+=2)
+        {
+            tt=i;
+            t=1;
+            do{
+                t*=tt;
+            }while(--tt);
+            sum2+=t;
+        }
+        cout<<sum1<<" "<<sum2<<endl;
+    }
+}
