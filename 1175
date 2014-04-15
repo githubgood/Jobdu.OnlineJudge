@@ -1,0 +1,100 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+    string s,ss,t;
+    int i,f,tt;
+    char a,b,c,d,e;
+    while(cin>>s)
+    {
+        f=0;
+        t="";
+        cin>>ss;
+        if(ss.length()==1)
+        {
+            for(i=1;i<11;i++)
+            {
+                a=ss[0]+i;
+                if(s.find(a)<10000)
+                {
+                    cout<<"YES";
+                    f=1;
+                    goto p;
+                }
+            }
+        }
+        if(ss.length()==2)
+        {
+            t="";
+            for(i=1;i<11;i++)
+            {
+                a=ss[0]+i;
+                tt=ss.length();  
+                while(tt--)t+=a;
+                if(s.find(t)<10000)
+                {
+                     
+                    cout<<"YES";
+                    f=1;
+                    goto p;
+                }
+                t="";
+            }
+        }
+        if(ss.length()==3)
+        {
+            for(i=1;i<11;i++)
+            {
+                tt=ss.length();
+                a=ss[0]+i;
+                while(tt--)t+=a;
+                if(s.find(t)<10000)
+                {
+                    cout<<"YES";
+                    f=1;
+                    goto p;
+                }
+                t="";
+            }
+        }
+        if(ss.length()==4)
+        {
+             
+            for(i=1;i<11;i++)
+            {
+                tt=ss.length();
+                a=ss[0]+i;
+                while(tt--)t+=a;
+                if(s.find(t)<10000)
+                {
+                    cout<<"YES";
+                    f=1;
+                    goto p;
+                }
+                t="";
+            }
+        }
+        if(ss.length()==5)
+        {
+            for(i=1;i<11;i++)
+            {
+                a=ss[0]+i;
+                b=ss[1]+i;
+                c=ss[2]+i;
+                d=ss[3]+i;
+                e=ss[4]+i;
+                if(s.find(a)<1000&&s.find(b)<1000&&s.find(c)<1000&&s.find(d)<1000&&s.find(e)<1000)
+                {
+                    cout<<"YES";
+                    f=1;
+                    goto p;
+                }
+            }
+        }
+        p:;
+        if(f==0)cout<<"NO";
+        cout<<endl;
+    }
+            //system("pause");
+}
