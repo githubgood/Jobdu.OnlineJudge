@@ -1,0 +1,27 @@
+#include <set>
+#include <iostream>
+//#include <>
+using namespace std;
+int main()
+{
+    set<int>s;
+    int a,c,b,d;
+    while(cin>>a)
+    {
+        while(a--)
+        {
+            cin>>b;
+            s.insert(b);
+        }
+        cin>>c;
+        while(c--)
+        {
+            cin>>d;
+            if(s.find(d)==s.end())
+            cout<<"NO"<<endl;
+            else
+            cout<<"YES"<<endl;
+        }
+        s.clear();
+    }
+}
