@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#include <vector>
+using namespace std;
+int main()
+{
+    vector<string> ma,mi;
+    string s;
+    int t=0,tt=1000000,k=6;
+    while(cin>>s)
+    {
+        if(s.size()>t)
+        {
+            t=s.size();
+            ma.clear();
+            ma.push_back(s);
+        }
+        else if(s.size()==t)
+        {
+            ma.push_back(s);
+        }
+        if(s.size()<tt)
+        {
+            tt=s.size();
+            mi.clear();
+            mi.push_back(s);
+        }
+        else if(s.size()==tt)
+        {
+            mi.push_back(s);
+        }
+    }
+    vector<string>::iterator it,at;
+    for(it=mi.begin();it!=mi.end();it++)
+    {cout<<(*it)<<endl;}
+    for(it=ma.begin();it!=ma.end();it++)
+    {cout<<(*it)<<endl;}
+//  system("pause");
+}
