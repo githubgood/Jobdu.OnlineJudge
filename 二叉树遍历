@@ -1,0 +1,57 @@
+#include <iostream>
+#include <cstdio>
+using namespace std;
+int i=0;
+typedef struct node
+{
+    char data;
+    node *l;
+    node *r;
+}*no,add;
+no cre(no t,char *b)
+{
+    char ch;
+    ch=b[i];
+    if(ch=='\0')
+    goto p;
+    i++;
+    if(ch=='#')
+    t=NULL;
+    else
+    {
+t=new add;
+        t->data=ch;
+        t->l=cre(t->l,b);
+        t->r=cre(t->r,b);
+    }
+    p:;
+    return t;
+}
+void mid(no t)
+{
+    if(t)
+    {
+        if(t->l)
+        {
+            mid(t->l);
+        }
+        cout<<t->data<<" ";
+        if(t->r)
+        {
+            mid(t->r);
+        }
+    }
+}
+int main()
+{
+    no t;
+    char a[1000];
+t=NULL;
+    while(gets(a)!='\0')
+    {
+        t=cre(t,a);
+        i=0;
+        mid(t);
+        cout<<endl;
+    }
+}
