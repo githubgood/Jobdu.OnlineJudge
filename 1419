@@ -1,0 +1,50 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <algorithm>
+#include <cstdio>
+using namespace std;
+bool cmp(const string &a,const string &b)
+{
+    string p,q;
+    p=a,q=b;
+    for(int i=0;i<p.size();i++)
+    {
+        if(p[i]>='A'&&p[i]<='Z')
+        {
+            p[i]=p[i]+('a'-'A');
+        }
+    }
+    for(int i=0;i<q.size();i++)
+    {
+        if(q[i]>='A'&&q[i]<='Z')
+        {
+            q[i]=q[i]+('a'-'A');
+        }
+    }   
+    return p<q;
+};
+int main()
+{
+    vector<string> v;
+    string s;
+    char a[10000];
+    int i;
+    while(cin>>i)
+    {
+        getchar();
+        while(i--)
+        {
+            gets(a);
+            s=a;
+            v.push_back(s);
+        }
+        sort(v.begin(),v.end(),cmp);
+        for(int i=0;i<v.size();i++)
+        {
+            cout<<v[i]<<endl;
+        }
+        v.clear();
+    }
+    //system("pause");      
+}
